@@ -34,7 +34,7 @@ index 71f23e1..13b0caa 100644
 -    top_five = rows[:-5:-1]
 +    top_five = rows[:-6:-1]
  
-     # Print out results
+# Print out results
      for row in top_five:
 (base) daisyabbott@MacBook-Pro-593 GitLab % 
 ANSWER: 
