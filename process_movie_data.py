@@ -5,30 +5,32 @@ import csv
 
 def find_top_5(filename):
     """Finds the top 5 highest grossing movies in a CSV dataset.
-       Input: filename, a string - points to filename of dataset
-       Output: None
-       Effect: should print five lines of text
+    Input: filename, a string - points to filename of dataset
+    Output: None
+    Effect: should print five lines of text
     """
     # read in file contents as list of dictionaries
     with open(filename) as f:
         csvr = csv.DictReader(f)
         rows = [r for r in csvr]
-    
+
     # Reformat some data types
     for row in rows:
         row["Gross"] = int(row["Gross"])
         row["Year"] = int(row["Release Date"][:4])
 
-    # Sort data and get top 5
-    gross_sort = lambda x : x["Gross"]
+    # Sort data and get top 10
+    gross_sort = lambda x: x["Gross"]
     rows.sort(key=gross_sort)
-    top_five = rows[:-6:-1]
+    top_ten = rows[:-11:-1]
 
     # Print out results
-    for i, row in enumerate(top_five):
-        print("{ind}. {row[Title]} ({row[Year]}) - ${row[Gross]:,d}".format(
-            ind=i+1,
-            row=row))
+    for i, row in enumerate(top_ten):
+        print(
+            "{ind}. {row[Title]} ({row[Year]}) - ${row[Gross]:,d}".format(
+                ind=i + 1, row=row
+            )
+        )
 
 
 # Script to run
