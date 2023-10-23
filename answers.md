@@ -87,3 +87,6 @@ hint: use --reapply-cherry-picks to include skipped commits
 hint: Disable this message with "git config advice.skippedCherryPicks false"
 Successfully rebased and updated refs/heads/test.
 
+I did run into some major merge conflicts and had to handle it:
+git pull --rebase origin test   
+And am hoping I didn't mess this up too bad.
