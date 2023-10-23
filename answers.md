@@ -60,6 +60,7 @@ What branches would change, and how?
 git checkout test
 git merge top_N
 ```
+I think I may have messed up the git push directly before this and pushed to just top_N instead of test, but then modified for test and pushed for test, so it didn't work exactly as anticipated. I didn't end up runnin into a merge conflict for question 5. I recieved this message after running those ^ commands: Merge made by the 'ort' strategy.
 
 6. What do you think would happen if you ran the following commands?
 What branches would change, and how?
@@ -67,6 +68,9 @@ What branches would change, and how?
 git checkout top_ten
 git merge test
 ```
+Upon running these commands, I ran into a merge conflict: Merge conflict in process_movie_data.py
+Automatic merge failed; fix conflicts and then commit the result.
+Which I suppose is to be expected? 
 
 7. What do you think would happen if you ran the following commands?
 What branches would change, and how?
@@ -75,3 +79,11 @@ git checkout test
 git rebase top_ten
 git rebase top_N
 ```
+After running git rebase top_ten: dropping 21ea492722568aeea561deb6d45e2398e7ff5c44 updated to find_top_n function -- patch contents already upstream
+Successfully rebased and updated refs/heads/test.
+
+And after running git rebase top_N: warning: skipped previously applied commit 3f84e1c
+hint: use --reapply-cherry-picks to include skipped commits
+hint: Disable this message with "git config advice.skippedCherryPicks false"
+Successfully rebased and updated refs/heads/test.
+
